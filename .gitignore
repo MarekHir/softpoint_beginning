@@ -43,4 +43,4 @@
 
 /node_modules
 
-./config/initializers/bullet.rb
+config/initializers/bullet.rb
