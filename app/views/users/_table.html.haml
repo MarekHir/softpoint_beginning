@@ -5,6 +5,7 @@
       %th= 'Meno'
       %th= 'Priezvisko'
       %th= 'Cele meno'
+      %th= 'Organizacia'
       - 4.times do
         %th
   %tbody
@@ -14,6 +15,7 @@
         %td= user.first_name
         %td= user.last_name
         %td= user_full_name(user.first_name, user.last_name)
+        %td= user.organization&.name
         %td
           = link_to 'Details', user_path(user), targed: :blank, class: 'btn btn-dark'
         %td

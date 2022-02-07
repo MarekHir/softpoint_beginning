@@ -4,6 +4,7 @@
 %p= @user.id
 %p= @user.first_name
 %p= @user.last_name
+%p= @user.organization&.name
 %p= user_full_name(@user.first_name, @user.last_name)
 
 = link_to "Back to lists", users_path, class: 'btn btn-dark'

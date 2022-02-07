@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :destroy, :update, :wakeup]
 
   def index
-    @users = User.all
+    @users = User.includes(:organization)
   end
 
   def new
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   private
 
   def strong_params
-    params.require(:user).permit(:first_name, :last_name)
+    params.require(:user).permit(:first_name, :last_name, :organization_id)
   end
 
   def set_user
