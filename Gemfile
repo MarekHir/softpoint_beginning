@@ -65,6 +65,8 @@ group :development do
 
   gem 'bullet'
 
+  gem "letter_opener"
+
 end
 
 group :test do
@@ -83,3 +85,5 @@ gem "pg_query", ">= 0.9.0"
 gem 'rollbar'
 
 gem 'cssbundling-rails'
+
+gem "haml-rails", "~> 2.0"

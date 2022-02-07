@@ -1,0 +1,6 @@
+.alert.alert-success= flash[:success]
+
+%h1= I18n.t('users.index.title')
+= render 'users/table'
+
+= link_to "New user", new_user_path, class: 'btn btn-primary'

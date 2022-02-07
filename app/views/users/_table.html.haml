@@ -1,0 +1,24 @@
+%table.table.table-responsive
+  %thead.table-hover.table-responsive
+    %tr
+      %th= 'ID'
+      %th= 'Meno'
+      %th= 'Priezvisko'
+      %th= 'Cele meno'
+      - 4.times do
+        %th
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.id
+        %td= user.first_name
+        %td= user.last_name
+        %td= user_full_name(user.first_name, user.last_name)
+        %td
+          = link_to 'Details', user_path(user), targed: :blank, class: 'btn btn-dark'
+        %td
+          = button_to 'Delete', user_path(user), method: :delete, class: 'btn btn-danger'
+        %td
+          = link_to 'Edit', edit_user_path(user), class: 'btn btn-primary'
+        %td
+          = button_to 'Wake up', wakeup_user_path(user), class: 'btn btn-warning'
